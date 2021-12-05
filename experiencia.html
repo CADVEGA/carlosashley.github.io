@@ -1,0 +1,166 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head>
+        <!-- Datos -->
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+        <!-- Descripcion -->
+        <meta name="author" content="Carlos Ashley de Vega"/>
+		<meta name="description" content="Diseño y creo páginas web."/>
+		<meta name="keywords" content="carlos,ashley,de vega,carlos ashley de vega,portfolio,cv,ux,ui,diseño"/>
+		<meta name="Resource-type" content="Document"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Titlulo -->
+        <title>Contacto</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="act1.css">
+    
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/jpg" href="imgs/clogo.png"/>
+
+        <!-- Iconos -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
+        <!-- Scripts -->
+        <script src="js/scrolly.js"></script>
+
+    </head>
+    
+<!--==== GENERAL ====-->    
+    <body class="web-fondo-negro">
+
+        <header class="nav-bar">
+            <a href="inicio.html" class="logo-nav-bar"><img src="imgs/logowhite.png" width="280px"></a>
+            <ul>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="experiencia.html">Experiencia</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </header>
+      
+        <div class="banner2"></div>
+
+        <div class="content4">
+            <h2>Proyectos, trabajos, colaboraciones.</h2>
+            <br>
+            <p>Estos con algunos de los trabajos que he realizado, para empresas y amigos.</p>
+        </div>
+
+<!--==== PORTFOLIO GALERIA ====-->  
+        <section class="portfolio" id="Portfolio">
+            <div class="container">
+                <div class="row">
+                    <div class="filter-buttons">
+                        <ul id="filter-btns">
+                            <li class="active" data-target="todo">Todo</li>
+                            <li data-target="Frontend">Frontend</li>
+                            <li data-target="Web">Diseño Web</li>
+                            <li data-target="Gráfico">Diseño Gráfico</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="portfolio-gallery">
+                        <div class="item" data-id="Frontend">
+                            <div class="inner">
+                                <img src="imgs\free3.jpg">
+                                <div class="overlay">
+                                    <h4><a href="#">Frontend</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" data-id="Web">
+                            <div class="inner">
+                                <img src="imgs\free2.jpg">
+                                <div class="overlay">
+                                    <h4><a href="#">Diseño Web</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" data-id="Gráfico">
+                            <div class="inner">
+                                <img src="imgs\graphic1.jpg">
+                                <div class="overlay">
+                                     <h4><a href="#">Diseño Gráfico</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" data-id="Gráfico">
+                            <div class="inner">
+                                <img src="imgs\free5.jpg">
+                                <div class="overlay">
+                                    <h4><a href="#">Diseño Gráfico</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" data-id="Frontend">
+                            <div class="inner">
+                                <img src="imgs\free4.jpg">
+                                <div class="overlay">
+                                    <h4><a href="#">Frontend</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item" data-id="Web">
+                            <div class="inner">
+                                <img src="imgs\free6.jpg">
+                                <div class="overlay">
+                                    <h4><a href="#">Diseño Web</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            const filterButtons = document.querySelector("#filter-btns").children;
+            const items = document.querySelector(".portfolio-gallery").children;
+
+            for (let i = 0; i < filterButtons.length; i++) {
+                filterButtons[i].addEventListener("click", function () {
+                    for (let j = 0; j < filterButtons.length; j++) {
+                        filterButtons[j].classList.remove("active")
+                    }
+                    this.classList.add("active");
+                    const target = this.getAttribute("data-target")
+
+                    for (let k = 0; k < items.length; k++) {
+                        items[k].style.display = "none";
+                        if (target == items[k].getAttribute("data-id")) {
+                            items[k].style.display = "block";
+                        }
+                        if (target == "todo") {
+                            items[k].style.display = "block";
+                        }
+                    }
+                })
+            }
+        </script>
+
+    </body>
+
+<!--==== FOOTER ====-->
+    <footer class="footer">
+        <div class="footer-contenedor"> <!--FLEXBOX -->
+            <h3><a class="afooter" href="inicio.html">CADVEGA</a></h3>
+            <ul>
+                <li><a class="afooter" href="sobre-mi.html">Sobre mí</a></li>
+                <li><a class="afooter" href="experiencia.html">Experiencia</a></li>
+                <li><a class="afooter" href="contacto.html">Contacto</a></li>
+            </ul>
+            <div class="cuentas">
+                <a class="afooter" href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a class="afooter" href="#"><i class="fab fa-facebook-f"></i></a>
+                <a class="afooter" href="#"><i class="fab fa-twitter"></i></a>
+                <a class="afooter" href="#"><i class="fab fa-tiktok"></i></a>
+           </div>
+        </div>
+        <p class="copyright">&copy; Carlos Ashley de Vega</p>
+    </footer>
+  
+</html> 
